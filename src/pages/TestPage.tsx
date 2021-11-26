@@ -4,7 +4,11 @@ import { StepWrapper } from '../components/UI/stepWidget/StepWrapper';
 export const TestPage = () => {
     return (
         <>
-            <StepWrapper/>
+            <header className="App-header"></header>
+
+            <main className="App-content">
+                <StepWrapper/>
+            </main>
         </>
     )
 }
