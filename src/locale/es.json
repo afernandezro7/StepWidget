@@ -1,3 +1,6 @@
 {
-
+    "header":{
+        "title":"Bienvenido",
+        "sub-title": "Hola Mundo"
+    }
 }
