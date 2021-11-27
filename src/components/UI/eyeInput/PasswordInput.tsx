@@ -1,7 +1,7 @@
 import { FC, InputHTMLAttributes, useRef, useState } from 'react';
 import './password_input.scss';
 import eye from "./eye.svg";
-declare module 'svg-inline-react';
+
 interface PasswordInputProps extends InputHTMLAttributes<HTMLInputElement> {
     reveal?: boolean;
     label: string;

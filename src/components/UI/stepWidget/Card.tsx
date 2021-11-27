@@ -10,6 +10,8 @@ export const Card = ({children}:Props) => {
             {
                 children
             }
+            <button>Back</button>
+            <button>Next</button>
         </div>
     )
 }
