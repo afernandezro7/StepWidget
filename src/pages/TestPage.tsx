@@ -1,13 +1,12 @@
 import React from 'react'
-import { StepWrapper } from '../components/UI/stepWidget/StepWrapper';
+import { StepWidget } from '../components/UI/stepWidget';
 
 export const TestPage = () => {
     return (
         <>
             <header className="App-header"></header>
-
             <main className="App-content">
-                <StepWrapper/>
+                <StepWidget/>
             </main>
         </>
     )
