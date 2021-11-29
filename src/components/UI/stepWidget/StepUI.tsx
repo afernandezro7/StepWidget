@@ -1,5 +1,4 @@
-import { Step, StepStatus } from "../../../interfaces/stepWidget"
-
+import { Step, StepStatus } from "../../../redux/interfaces/stepInterfaces"
 
 interface Props {
     step: Step;

@@ -1,6 +1,5 @@
-import React from 'react'
-import { Step } from '../../../interfaces/stepWidget'
 import { StepUI } from './StepUI'
+import { Step } from '../../../redux/interfaces/stepInterfaces';
 
 
 
