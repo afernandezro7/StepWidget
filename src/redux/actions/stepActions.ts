@@ -3,11 +3,11 @@ import { Step, StepActionType } from '../interfaces/stepInterfaces';
 
 export type StepAction = 
 | { type: StepActionType.INIT , payload: {value: Step[]}}
-| { type: StepActionType.NEXT, payload: { value: boolean; } }
+| { type: StepActionType.NEXT }
 | { type: StepActionType.BACK }
 | { type: StepActionType.RESET }
-| { type: StepActionType.VALIDATE_OK, payload: {value: Step} }
-| { type: StepActionType.VALIDATE_FAIL, payload: {value: Step} }
+| { type: StepActionType.FEEDBACK, payload: {value: any}}
+
 
 
 export const doInit = (steps:Step[]):StepAction => ({
@@ -22,13 +22,13 @@ export const doBack = ():StepAction => ({
     type: StepActionType.BACK
 })
 
-export const doSuccessValidation = ():StepAction => ({
-    type: StepActionType.BACK
+export const doNextStep = (): StepAction => ({
+    type: StepActionType.NEXT
 })
 
-export const doNextStep = ( value: boolean ): StepAction => ({
-    type: StepActionType.NEXT,
-    payload: { value }
+export const doFeedback= (value:any): StepAction => ({
+    type: StepActionType.FEEDBACK,
+    payload: {value}
 })
 
 

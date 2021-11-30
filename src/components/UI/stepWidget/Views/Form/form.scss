@@ -1,0 +1,32 @@
+@import "../../../../../styles/base.scss";
+
+.steps-content {
+    .form-content {
+        .form-info {
+            h3 {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+
+        .form-password {
+
+            @media (min-width: 768px) {
+                display: flex;
+                justify-content: flex-start;
+
+
+            }
+        }
+
+        .form-hint {
+
+            display: block;
+        }
+
+        .btn div {
+            display: inline !important;
+        }
+    }
+}
+

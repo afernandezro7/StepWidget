@@ -2,5 +2,41 @@
     "header":{
         "title":"Bienvenido",
         "sub-title": "Hola Mundo"
-    }
+    },
+    "product_info": {
+        "title":"Crea tu Password Manager",
+        "prod_img1": "Guarda aquí todas tus contarseñas,datos o cualquier información, olvida las notas de papel y las aplicaciones protegidas.",
+        "prod_img2": "Crea tu clave maestra: sólo tú podrás accedera tus secretos con ella.",
+        "prod_info1": {
+            "title":"Cómo funciona",
+            "content": "En primer lugar, debes crear una contraseña diferente para sus pertenecias electrónicas. No podrás recuperar tu contraseña así que recuérdala bien."
+        },
+        "prod_info2": {
+            "title":"Que datos puedes guardar",
+            "content": "Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono móvil, el número de serie de alguno de tus dispositivos o cualquier información que necesites tener en un lugar seguro"
+        }
+    },
+    "product_form": {
+        "title":"Crea tu Password Manager",
+        "info1":"En primer lugar, debes crear una contraseña diferente para sus pertenecias electrónicas. No podrás recuperar tu contraseña así que recuérdala bien.",
+        "info2":"También crea una pista que te ayude a recordar tu contraseña maestra.",
+        "password_label": "Crea tu contraseña maestra",
+        "password2_label": "Repite tu contraseña maestra",
+        "password2_placeholder": "Repite tu contraseña",
+        "hint": "Crea tu pista para recordar tu contraseña(opcional)"       
+    },
+    "product_feed": {
+        "error":{
+            "title":"Ha habido un error",
+            "content": "No hemos podido modificar tu Contraseña Maestra. Inténtalo más tarde.",
+            "btn_link": "Volver al password Manager"
+        },
+        "success": {
+            "title":"Tu Password Manager ha sido creado con éxito",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestiae fugit ipsam.",
+            "btn_link": "Acceder"
+        }       
+    },
+    "next_btn": "Siguiente",
+    "back_btn": "Cancelar"
 }

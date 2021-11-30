@@ -1,37 +1,56 @@
 import img1 from '../../../../../assets/img/group.svg';
 import img2 from '../../../../../assets/img/group-3.svg';
+import { actionCreators } from '../../../../../redux';
+import { bindActionCreators } from 'redux';
+import { useDispatch } from 'react-redux';
+import './productInfo.scss'
+import { useTranslation } from 'react-i18next';
+
 export const ProductInformation = () => {
+
+    const [t] = useTranslation("global")
+
+    const dispatch = useDispatch()
+    const {startNextStep} = bindActionCreators(actionCreators,dispatch)
+    
+    const handleNext = () => {
+        startNextStep()
+    }
+
     return (
         <>
             <div className="product-title">
-                <h2>Crea tu Password Manager</h2>
+                <h2>{t("product_info.title")}</h2>
             </div>
 
             <div className="product-content">
                 <div className="product-images">
                     <div className="product-img">
                         <img src={img1} alt="product" />
-                        <p>Guarda aquí todas tus contarseñas,datos o cualquier información, olvida las notas de papel y las aplicaciones protegidas.</p>
+                        <p>{t("product_info.prod_img1")}</p>
                     </div>
                     <div className="product-img">
                         <img src={img2} alt="product" />
-                        <p>Crea tu clave maestra: sólo tú podrás accedera tus secretos con ella.</p>
+                        <p>{t("product_info.prod_img1")}</p>
                     </div>
                 </div>
                 <div className="product-info">
-                    <h3>Cómo funciona</h3>
-                    <p>En primer lugar, debes crear una contraseña diferente para sus pertenecias electrónicas. 
-                        No podrás recuperar tu contraseña así que recuérdala bien.
-                    </p>
+                    <h3>{t("product_info.prod_info1.title")}</h3>
+                    <p>{t("product_info.prod_info1.content")}</p>
                 </div>
                 <div className="product-info">
-                    <h3>Que datos puedes guardar</h3>
-                    <p>Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono móvil, 
-                        el número de serie de alguno de tus dispositivos 
-                        o cualquier información que necesites tener en un lugar seguro
-                    </p>
+                    <h3>{t("product_info.prod_info2.title")}</h3>
+                    <p>{t("product_info.prod_info2.content")}</p>
                 </div>
             </div>
+
+            <hr />
+
+            <div className="btn-group">         
+                <button className="btn btn-secondary">{t("back_btn")}</button>
+                <button className="btn btn-primary" onClick={handleNext}>{t("next_btn")} &gt;</button>
+            </div>
+
         </>
     )
 }

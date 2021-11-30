@@ -4,7 +4,6 @@ import { Loading } from "../../components/UI/Loading";
 
 const loadingComponent:Step = {
     component: Loading,
-    validationRequired: false,
     status:StepStatus.Active,
     title: 'Loading'
 }
@@ -43,6 +42,12 @@ export const stepReducer = ( state:StepState=init, action:StepAction ) : StepSta
                 currentIndex: nextIndex,
                 currentStep: steps[nextIndex],
                 steps
+            }
+        case StepActionType.FEEDBACK:   
+            const newSteps = setFeedbak(state.currentIndex+1,action.payload.value,state.steps)     
+            return {
+                ...state,
+                steps: newSteps
             }
         case StepActionType.RESET:
 
@@ -83,5 +88,19 @@ const changeTagStatus = (steps:Step[], nextIndex:number): Step[] => {
             }
 
         }
+    })
+}
+
+const setFeedbak = (nextIndex:number,value:any, steps:Step[]): Step[] => {
+
+
+    return steps.map( (step,i) => {
+        if(nextIndex === i) {
+            return{
+                ...step,
+                feedBackNext: value
+            }
+        }
+        return step
     })
 }

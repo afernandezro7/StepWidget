@@ -1,8 +1,6 @@
 import { Dispatch } from "redux"
-import { doReset, StepAction, doInit, doNextStep, doBack } from '../actions/stepActions';
+import { doReset, StepAction, doInit, doNextStep, doBack, doFeedback } from '../actions/stepActions';
 import { Step } from "../interfaces/stepInterfaces"
-import { State } from "../reducer";
-// import { State } from "../reducer";
 
 
 export const startChecking = (steps:Step[]) =>{
@@ -17,28 +15,19 @@ export const startReset = () =>{
     }
 }
 
-
-export const startCheckingValidation = () =>{
-    return (dispatch:Dispatch<StepAction>, getState:() => State )=> {
-        const { currentStep } = getState().step
-        if(currentStep.validationRequired){
-            
-            dispatch(doNextStep(validated))
-
-        }
-    }
-   
-}
-
 export const startNextStep = () =>{
-    return (dispatch:Dispatch<StepAction>, getState:() => State)=> {
-        const { currentStep } = getState().step
-        dispatch(doNextStep(validated))
+    return (dispatch:Dispatch<StepAction>)=> {
+        dispatch(doNextStep())
     }
 }
 
 export const startBackStep = () =>{
     return (dispatch:Dispatch<StepAction>)=> {
         dispatch(doBack())
+    }
+}
+export const startFeedbackNextComponent = (value:any) =>{
+    return (dispatch:Dispatch<StepAction>)=> {
+        dispatch(doFeedback(value))
     }
 }

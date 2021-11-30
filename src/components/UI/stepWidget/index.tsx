@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { StepsGroup } from './StepsGroup';
 import { StepWrapper } from './StepWrapper';
 import { CardHolder } from './CardHolder';
-import { Card, CardButtonsProps } from './Card';
+import { Card } from './Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionCreators, State } from '../../../redux';
 import { bindActionCreators } from 'redux';
@@ -14,15 +14,6 @@ export interface Props {
     steps: Step[]
 }
 
-const defaultButtons:CardButtonsProps = {
-    backButtonName:         'Cancelar', 
-    backButtonClassName:    '', 
-    nextButtonName:         'Siguiente', 
-    nextButtonClassName:    '',
-    lastCallBack:           null,
-    lastButtonName:         '', 
-    lastButtonClassName:    '',
-}
 
 export const StepWidget = ({steps}:Props) => {
 
@@ -30,7 +21,6 @@ export const StepWidget = ({steps}:Props) => {
     const dispatch = useDispatch()
     const {startChecking} = bindActionCreators(actionCreators,dispatch)
     let Component: ()=> JSX.Element = currentStep.component;
-    let componentButtons = defaultButtons;
 
     useEffect(() => {
         startChecking(steps)
@@ -40,8 +30,6 @@ export const StepWidget = ({steps}:Props) => {
     useEffect(() => {       
         // eslint-disable-next-line react-hooks/exhaustive-deps
         Component = currentStep.component;
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        componentButtons = currentStep.buttons || defaultButtons
 
     }, [currentIndex, currentStep.component])
 
@@ -50,7 +38,7 @@ export const StepWidget = ({steps}:Props) => {
         <StepWrapper>
             <StepsGroup steps = {currentSteps}/>
             <CardHolder>
-                <Card {...componentButtons} >
+                <Card>
                     {
                         <Component/>
                     }

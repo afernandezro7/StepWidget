@@ -2,5 +2,43 @@
     "header":{
         "title":"Welcome",
         "sub-title": "Hello Word"
-    }
+    },
+    "product_info": {
+        "title":"Create your Password Manager",
+        "prod_img1": "Save here all your passwords, data or any information, forget paper notes and protected applications.",
+        "prod_img2": "Create your master password: only you can access your secrets with it.",
+        "prod_info1": {
+            "title":"How does it work",
+            "content": "First, you must create a different password for your electronic belongings. You will not be able to recover your password so remember it well."
+        },
+        "prod_info2": {
+            "title":"What data can you save?",
+            "content": "For example, the number of your card, the PIN and PUK of your mobile phone, the serial number of one of your devices or any information you need to have in a safe place"
+        }
+    },
+    "product_form": {
+        "title":"Crea tu Password Manager",
+        "info1":"First, you must create a different password for your electronic belongings. You will not be able to recover your password so remember it well.",
+        "info2":"Also create a hint to help you remember your master password.",
+        "password_label": "Create your master password",
+        "password2_label": "Repeat your master password",
+        "password2_placeholder": "Repeat your password",
+        "hint": "Create your hint to remember your password (optional)"
+        
+    },
+    "product_feed": {
+        "error":{
+            "title":"An error has occured",
+            "content": "We have not been able to modify your Master Password. Try again later.",
+            "btn_link": "Return to password Manager"
+        },
+        "success": {
+            "title":"Your Password Manager has been created successfully",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestiae fugit ipsam.",
+            "btn_link": "Access"
+        }      
+    },
+    "next_btn": "Next",
+    "back_btn": "Cancel"
+
 }
