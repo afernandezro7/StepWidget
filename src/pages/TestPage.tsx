@@ -6,9 +6,21 @@ import { Form } from '../components/UI/stepWidget/Views/Form';
 import { actionCreators } from '../redux';
 import {  useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { submitForm } from '../services/api';
 // import { FeedBack } from '../components/UI/stepWidget/Views/Feedback/index';
 
+const handleFormSubmit = async() :Promise<boolean>=> { 
 
+    try {
+        const {status} = await submitForm('pruebaKO123')
+        if(status===200) return true
+
+        return false
+    } catch (error) {
+
+        return false
+    }
+}
 
 
 export const TestPage = () => {
@@ -27,7 +39,8 @@ export const TestPage = () => {
             component: Form,
             status: StepStatus.Incomplete,
             validationRequired: true,
-            title: 'Form'
+            beforeNext: handleFormSubmit,
+            title: 'Form',
         },
         {
             component: Form,
@@ -56,3 +69,4 @@ export const TestPage = () => {
         </>
     )
 }
+

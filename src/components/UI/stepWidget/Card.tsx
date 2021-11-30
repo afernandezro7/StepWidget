@@ -28,10 +28,11 @@ export const Card = ({
 {
 
     const dispatch = useDispatch()
-    const { startNextStep, startBackStep } = bindActionCreators(actionCreators,dispatch)
+    const { startNextStep, startBackStep, startCheckingValidation } = bindActionCreators(actionCreators,dispatch)
 
     const handleNextButton = () => {
-        startNextStep(true)
+        startCheckingValidation()
+        startNextStep()
     }
     const handleBackButton = () => {
         startBackStep()

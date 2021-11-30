@@ -5,7 +5,9 @@ export type StepAction =
 | { type: StepActionType.INIT , payload: {value: Step[]}}
 | { type: StepActionType.NEXT, payload: { value: boolean; } }
 | { type: StepActionType.BACK }
-| { type: StepActionType.RESET };
+| { type: StepActionType.RESET }
+| { type: StepActionType.VALIDATE_OK, payload: {value: Step} }
+| { type: StepActionType.VALIDATE_FAIL, payload: {value: Step} }
 
 
 export const doInit = (steps:Step[]):StepAction => ({
@@ -17,6 +19,10 @@ export const doReset = ():StepAction => ({
 })
 
 export const doBack = ():StepAction => ({
+    type: StepActionType.BACK
+})
+
+export const doSuccessValidation = ():StepAction => ({
     type: StepActionType.BACK
 })
 
