@@ -1,42 +1,47 @@
-import React from 'react'
+
+import React, { useEffect } from 'react'
 import { StepsGroup } from './StepsGroup';
 import { StepWrapper } from './StepWrapper';
 import { CardHolder } from './CardHolder';
-import { Step, StepStatus } from '../../../interfaces/stepWidget';
 import { Card } from './Card';
-import { ProductInformation } from './Views/ProductInformation';
-import { Form as FormView } from './Views/Form';
-import { FeedBack } from './Views/Feedback';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionCreators, State } from '../../../redux';
+import { bindActionCreators } from 'redux';
+import { Step } from '../../../redux/interfaces/stepInterfaces';
 
-const steps:Step[] = [
-    {
-        title: "text 1",
-        status: StepStatus.Active
-    },
-    {
-        title: "text 2",
-        status: StepStatus.Incomplete
-    },
-    {
-        title: "text 3",
-        status: StepStatus.Incomplete
-    },
-]
 
-export const StepWidget = () => {
+export interface Props {
+    steps: Step[]
+}
+
+
+export const StepWidget = ({steps}:Props) => {
+
+    const {currentStep,currentIndex, steps:currentSteps} = useSelector((state:State) => state.step)
+    const dispatch = useDispatch()
+    const {startChecking} = bindActionCreators(actionCreators,dispatch)
+    let Component: ()=> JSX.Element = currentStep.component;
+
+    useEffect(() => {
+        startChecking(steps)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    useEffect(() => {       
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        Component = currentStep.component;
+
+    }, [currentIndex, currentStep.component])
+
     return (
 
         <StepWrapper>
-            <StepsGroup steps = {steps}/>
+            <StepsGroup steps = {currentSteps}/>
             <CardHolder>
                 <Card>
-                    <ProductInformation/>
-                </Card>
-                <Card>
-                    <FormView/>
-                </Card>
-                <Card>
-                    <FeedBack success={false}/>
+                    {
+                        <Component/>
+                    }
                 </Card>
             </CardHolder>
         </StepWrapper>

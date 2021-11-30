@@ -1,7 +1,6 @@
 import { ReactElement } from "react"
-
 export interface Props {
-    children?: ReactElement | ReactElement[] 
+    children?: ReactElement | ReactElement[];
 }
 
 export const Card = ({children}:Props) => {
@@ -10,8 +9,6 @@ export const Card = ({children}:Props) => {
             {
                 children
             }
-            <button>Back</button>
-            <button>Next</button>
         </div>
     )
 }

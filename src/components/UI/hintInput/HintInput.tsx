@@ -4,7 +4,7 @@ import './hint_input.scss'
 
 interface HintInputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
-    onChangeInput?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChangeInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const HintInput:FC<HintInputProps> = ({label,maxLength=60,onChangeInput,onChange,...inputProps}) => {
@@ -13,7 +13,7 @@ export const HintInput:FC<HintInputProps> = ({label,maxLength=60,onChangeInput,o
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setlength(e.target.value.length)
-        onChangeInput && onChangeInput(e);
+        onChangeInput(e);
 
     }
 
