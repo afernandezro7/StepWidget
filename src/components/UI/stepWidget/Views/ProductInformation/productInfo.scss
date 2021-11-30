@@ -1,0 +1,55 @@
+@import "../../../../../styles/base.scss";
+
+.steps-content {
+
+    .product-title,
+    .form-title {
+        margin-bottom: 2rem;
+
+        h2 {
+            font-weight: bold;
+        }
+    }
+
+    .product-content {
+
+        .product-images {
+
+            @media (min-width: 768px) {
+                display: flex;
+                flex: 0 0 0;
+                justify-content: center;
+                align-items: baseline;
+
+            }
+
+            .product-img {
+                padding-right: 2.6rem;
+                text-align: center;
+
+                @media (min-width: 768px) {
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+
+        .product-info {
+            h3 {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+    .product-terms{
+        display: flex;
+        align-items: baseline;
+        & input {
+            margin-right: 1rem;
+        }
+        & p {
+            font-size: 14;
+        }
+    }
+}
