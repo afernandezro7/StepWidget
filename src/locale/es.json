@@ -14,7 +14,8 @@
         "prod_info2": {
             "title":"Que datos puedes guardar",
             "content": "Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono móvil, el número de serie de alguno de tus dispositivos o cualquier información que necesites tener en un lugar seguro"
-        }
+        },
+        "terms_check":"Confirma que tiene mayoría de edad y que acepta que tratemos sus datos según la politica de protección de datos"
     },
     "product_form": {
         "title":"Crea tu Password Manager",
@@ -23,7 +24,20 @@
         "password_label": "Crea tu contraseña maestra",
         "password2_label": "Repite tu contraseña maestra",
         "password2_placeholder": "Repite tu contraseña",
-        "hint": "Crea tu pista para recordar tu contraseña(opcional)"       
+        "hint": "Crea tu pista para recordar tu contraseña(opcional)",
+        "validation":{
+            "password":{
+                "required":"La contraseña es obligatorio",
+                "min":"Contraseña(Min 8 - Max 24 caracteres)",
+                "max":"Contraseña(Min 8 - Max 24 caracteres)",
+                "matches":"Debe contener al menos una mayúscula, una minúscula y un dígito"
+            },
+            "password2":{
+                "required":"Confirme su contraseña",
+                "match":"Las contraseñas no coinciden"
+
+            }
+        }
     },
     "product_feed": {
         "error":{

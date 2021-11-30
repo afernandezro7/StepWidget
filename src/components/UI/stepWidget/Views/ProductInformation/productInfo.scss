@@ -42,4 +42,14 @@
             }
         }
     }
+    .product-terms{
+        display: flex;
+        align-items: baseline;
+        & input {
+            margin-right: 1rem;
+        }
+        & p {
+            font-size: 14;
+        }
+    }
 }

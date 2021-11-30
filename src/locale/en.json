@@ -14,7 +14,9 @@
         "prod_info2": {
             "title":"What data can you save?",
             "content": "For example, the number of your card, the PIN and PUK of your mobile phone, the serial number of one of your devices or any information you need to have in a safe place"
-        }
+        },
+        "terms_check":"You confirm that you are of legal age and that you accept that we treat your data according to the data protection policy"
+
     },
     "product_form": {
         "title":"Crea tu Password Manager",
@@ -23,7 +25,20 @@
         "password_label": "Create your master password",
         "password2_label": "Repeat your master password",
         "password2_placeholder": "Repeat your password",
-        "hint": "Create your hint to remember your password (optional)"
+        "hint": "Create your hint to remember your password (optional)",
+        "validation":{
+            "password":{
+                "required":"Password is required",
+                "min":"Password (Min 8 - Max 24 characters)",
+                "max":"Password (Min 8 - Max 24 characters)",
+                "matches":"Must contain at least one uppercase, one lowercase, and one digit"
+            },
+            "password2":{
+                "required":"Confirm your password",
+                "match":"Passwords do not match"
+
+            }
+        }
         
     },
     "product_feed": {
